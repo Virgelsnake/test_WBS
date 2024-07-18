@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WBS Organisational Chart</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .node text {
+      font: 12px sans-serif;
+      fill: white;
+    }
+
+    .node rect {
+      fill: #003057;
+      stroke: #ccc;
+      stroke-width: 2px;
+    }
+
+    .link {
+      fill: none;
+      stroke: #A7A8A9;
+      stroke-width: 2px;
+    }
+
+    .svg-container {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      padding-bottom: 80%;
+      vertical-align: top;
+      overflow: hidden;
+    }
+
+    .svg-content-responsive {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="svg-container">
+    <svg class="svg-content-responsive"></svg>
+  </div>
+  <script>
+    const data = {
+      name: "Offshore Oil and Gas Platform Development",
+      children: [
+        {
+          name: "Project Initiation",
+          children: [
+            {
+              name: "Feasibility Study",
+              children: [
+                {
+                  name: "Site Assessment",
+                  children: [
+                    { name: "Geophysical Surveys" },
+                    { name: "Geotechnical Investigations" },
+                    { name: "Seabed Analysis" }
+                  ]
+                },
+                {
+                  name: "Reservoir Analysis",
+                  children: [
+                    { name: "Seismic Data Interpretation" },
+                    { name: "Petrophysical Analysis" },
+                    { name: "Reservoir Modelling" }
+                  ]
+                },
+                {
+                  name: "Economic Viability",
+                  children: [
+                    { name: "Cost Estimation" },
+                    { name: "Revenue Projections" },
+                    { name: "Risk Analysis" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Environmental Impact Assessment",
+              children: [
+                {
+                  name: "Baseline Survey",
+                  children: [
+                    { name: "Marine Ecology Survey" },
+                    { name: "Air and Water Quality Survey" },
+                    { name: "Noise and Vibration Survey" }
+                  ]
+                },
+                {
+                  name: "Impact Analysis",
+                  children: [
+                    { name: "Impact on Marine Life" },
+                    { name: "Impact on Local Communities" },
+                    { name: "Impact on Air and Water Quality" }
+                  ]
+                },
+                {
+                  name: "Mitigation Planning",
+                  children: [
+                    { name: "Pollution Control Measures" },
+                    { name: "Waste Management Plan" },
+                    { name: "Emergency Response Plan" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Regulatory Approvals",
+              children: [
+                {
+                  name: "Planning Permission",
+                  children: [
+                    { name: "Zoning Approvals" },
+                    { name: "Construction Permits" },
+                    { name: "Operation Licences" }
+                  ]
+                },
+                {
+                  name: "Environmental Permits",
+                  children: [
+                    { name: "Emission Permits" },
+                    { name: "Discharge Permits" },
+                    { name: "Habitat Alteration Permits" }
+                  ]
+                },
+                {
+                  name: "Offshore Safety Permits",
+                  children: [
+                    { name: "Safety Case Submission" },
+                    { name: "Risk Assessment" },
+                    { name: "Safety Management System Approval" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Design and Engineering",
+          children: [
+            {
+              name: "Platform Design",
+              children: [
+                {
+                  name: "Preliminary Design",
+                  children: [
+                    { name: "Conceptual Design" },
+                    { name: "Design Basis" },
+                    { name: "Feasibility Studies" }
+                  ]
+                },
+                {
+                  name: "Detailed Design",
+                  children: [
+                    { name: "Structural Design" },
+                    { name: "Mechanical Design" },
+                    { name: "Electrical Design" }
+                  ]
+                },
+                {
+                  name: "Final Design Approval",
+                  children: [
+                    { name: "Design Review" },
+                    { name: "Regulatory Compliance Check" },
+                    { name: "Stakeholder Approval" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Well Design",
+              children: [
+                {
+                  name: "Platform Wells Design",
+                  children: [
+                    { name: "Wellbore Design" },
+                    { name: "Completion Design" },
+                    { name: "Production Tubing Design" }
+                  ]
+                },
+                {
+                  name: "Subsea Wells Design",
+                  children: [
+                    { name: "Subsea Wellhead Design" },
+                    { name: "Subsea Tree Design" },
+                    { name: "Flowline Design" }
+                  ]
+                },
+                {
+                  name: "Injector Wells Design",
+                  children: [
+                    { name: "Injection Wellbore Design" },
+                    { name: "Injection Equipment Design" },
+                    { name: "Monitoring System Design" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Subsea Infrastructure Design",
+              children: [
+                {
+                  name: "Flowline Design",
+                  children: [
+                    { name: "Flowline Route Selection" },
+                    { name: "Flowline Material Selection" },
+                    { name: "Flowline Installation Design" }
+                  ]
+                },
+                {
+                  name: "Riser Design",
+                  children: [
+                    { name: "Riser Type Selection" },
+                    { name: "Riser Support Design" },
+                    { name: "Riser Installation Design" }
+                  ]
+                },
+                {
+                  name: "Subsea Manifold Design",
+                  children: [
+                    { name: "Manifold Configuration" },
+                    { name: "Valve and Piping Design" },
+                    { name: "Manifold Installation Design" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Procurement",
+          children: [
+            {
+              name: "Material and Equipment Sourcing",
+              children: [
+                {
+                  name: "Platform Equipment",
+                  children: [
+                    { name: "Structural Steel" },
+                    { name: "Deck Modules" },
+                    { name: "Cranes and Lifters" }
+                  ]
+                },
+                {
+                  name: "Well Equipment",
+                  children: [
+                    { name: "Casing and Tubing" },
+                    { name: "Wellheads" },
+                    { name: "Completion Tools" }
+                  ]
+                },
+                {
+                  name: "Subsea Equipment",
+                  children: [
+                    { name: "Subsea Trees" },
+                    { name: "Flowlines" },
+                    { name: "Manifolds" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Contracting",
+              children: [
+                {
+                  name: "EPC Contract",
+                  children: [
+                    { name: "Tender Preparation" },
+                    { name: "Bid Evaluation" },
+                    { name: "Contract Award" }
+                  ]
+                },
+                {
+                  name: "Subcontractor Selection",
+                  children: [
+                    { name: "Prequalification" },
+                    { name: "Bid Solicitation" },
+                    { name: "Subcontract Award" }
+                  ]
+                },
+                {
+                  name: "Logistics and Transport",
+                  children: [
+                    { name: "Transport Planning" },
+                    { name: "Shipping Arrangements" },
+                    { name: "Customs Clearance" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Construction",
+          children: [
+            {
+              name: "Platform Construction",
+              children: [
+                {
+                  name: "Site Preparation",
+                  children: [
+                    { name: "Seabed Preparation" },
+                    { name: "Temporary Facilities Setup" },
+                    { name: "Material Storage" }
+                  ]
+                },
+                {
+                  name: "Platform Fabrication",
+                  children: [
+                    { name: "Module Fabrication" },
+                    { name: "Structural Assembly" },
+                    { name: "Painting and Coating" }
+                  ]
+                },
+                {
+                  name: "Installation",
+                  children: [
+                    { name: "Loadout and Transport" },
+                    { name: "Offshore Installation" },
+                    { name: "Hook-up and Commissioning" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Well Drilling",
+              children: [
+                {
+                  name: "Platform Wells Drilling",
+                  children: [
+                    { name: "Drilling Program" },
+                    { name: "Drilling Execution" },
+                    { name: "Well Completion" }
+                  ]
+                },
+                {
+                  name: "Injector Wells Drilling",
+                  children: [
+                    { name: "Drilling Program" },
+                    { name: "Drilling Execution" },
+                    { name: "Well Completion" }
+                  ]
+                },
+                {
+                  name: "Subsea Wells Drilling",
+                  children: [
+                    { name: "Drilling Program" },
+                    { name: "Drilling Execution" },
+                    { name: "Well Completion" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Subsea Infrastructure Installation",
+              children: [
+                {
+                  name: "Flowline Installation",
+                  children: [
+                    { name: "Flowline Fabrication" },
+                    { name: "Flowline Laying" },
+                    { name: "Flowline Testing" }
+                  ]
+                },
+                {
+                  name: "Riser Installation",
+                  children: [
+                    { name: "Riser Fabrication" },
+                    { name: "Riser Installation" },
+                    { name: "Riser Testing" }
+                  ]
+                },
+                {
+                  name: "Subsea Manifold Installation",
+                  children: [
+                    { name: "Manifold Fabrication" },
+                    { name: "Manifold Installation" },
+                    { name: "Manifold Testing" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Commissioning",
+          children: [
+            {
+              name: "System Testing",
+              children: [
+                {
+                  name: "Platform Systems Testing",
+                  children: [
+                    { name: "Mechanical Systems Testing" },
+                    { name: "Electrical Systems Testing" },
+                    { name: "Control Systems Testing" }
+                  ]
+                },
+                {
+                  name: "Well Systems Testing",
+                  children: [
+                    { name: "Well Integrity Testing" },
+                    { name: "Flow Testing" },
+                    { name: "Production Testing" }
+                  ]
+                },
+                {
+                  name: "Subsea Systems Testing",
+                  children: [
+                    { name: "Flowline Testing" },
+                    { name: "Riser Testing" },
+                    { name: "Manifold Testing" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Start-Up",
+              children: [
+                {
+                  name: "Initial Production",
+                  children: [
+                    { name: "Production Ramp-Up" },
+                    { name: "System Optimisation" },
+                    { name: "Operational Handover" }
+                  ]
+                },
+                {
+                  name: "Performance Monitoring",
+                  children: [
+                    { name: "Production Monitoring" },
+                    { name: "System Diagnostics" },
+                    { name: "Performance Reporting" }
+                  ]
+                },
+                {
+                  name: "Operational Adjustments",
+                  children: [
+                    { name: "Process Adjustments" },
+                    { name: "Equipment Tuning" },
+                    { name: "Production Optimisation" }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: "Operations and Maintenance",
+          children: [
+            {
+              name: "Operational Management",
+              children: [
+                {
+                  name: "Monitoring and Control",
+                  children: [
+                    { name: "Remote Monitoring" },
+                    { name: "Control Room Operations" },
+                    { name: "Data Analysis" }
+                  ]
+                },
+                {
+                  name: "Performance Reporting",
+                  children: [
+                    { name: "Daily Reporting" },
+                    { name: "Monthly Reporting" },
+                    { name: "Annual Reporting" }
+                  ]
+                },
+                {
+                  name: "Operational Adjustments",
+                  children: [
+                    { name: "Process Optimisation" },
+                    { name: "Equipment Maintenance" },
+                    { name: "Production Adjustments" }
+                  ]
+                }
+              ]
+            },
+            {
+              name: "Maintenance",
+              children: [
+                {
+                  name: "Preventive Maintenance",
+                  children: [
+                    { name: "Scheduled Inspections" },
+                    { name: "Routine Servicing" },
+                    { name: "Component Replacements" }
+                  ]
+                },
+                {
+                  name: "Corrective Maintenance",
+                  children: [
+                    { name: "Fault Diagnosis" },
+                    { name: "Emergency Repairs" },
+                    { name: "System Restorations" }
+                  ]
+                },
+                {
+                  name: "Spare Parts Management",
+                  children: [
+                    { name: "Inventory Control" },
+                    { name: "Parts Procurement" },
+                    { name: "Parts Storage" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    };
+
+    const margin = { top: 40, right: 120, bottom: 50, left: 120 };
+    const width = 1800 - margin.left - margin.right;
+    const height = 1200 - margin.top - margin.bottom;
+
+    const svg = d3.select(".svg-content-responsive")
+      .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+      .attr("preserveAspectRatio", "xMinYMin meet")
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    const root = d3.hierarchy(data);
+    root.x0 = height / 2;
+    root.y0 = 0;
+
+    const dx = 150;
+    const dy = 300;
+
+    const treeLayout = d3.tree().nodeSize([dx, dy]);
+
+    const linkGenerator = d3.linkVertical()
+      .x(d => d.x)
+      .y(d => d.y);
+
+    function update(source) {
+      const treeData = treeLayout(root);
+      const nodes = treeData.descendants().reverse();
+      const links = treeData.links();
+
+      nodes.forEach(d => { d.y = d.depth * dy; });
+
+      const node = svg.selectAll('g.node')
+        .data(nodes, d => d.id || (d.id = ++i));
+
+      const nodeEnter = node.enter().append('g')
+        .attr('class', 'node')
+        .attr('transform', d => `translate(${source.x0},${source.y0})`)
+        .on('click', click);
+
+      nodeEnter.append('rect')
+        .attr('width', 160)
+        .attr('height', d => {
+          const lines = wrapText(d.data.name, 140);
+          return lines.length * 14 + 10;
+        })
+        .attr('x', -80)
+        .attr('y', d => {
+          const lines = wrapText(d.data.name, 140);
+          return -(lines.length * 14 + 10) / 2;
+        })
+        .style('fill', '#003057')
+        .style('stroke', '#ccc')
+        .style('stroke-width', 2);
+
+      nodeEnter.append('text')
+        .attr('dy', '0.35em')
+        .attr('x', 0)
+        .attr('y', d => {
+          const lines = wrapText(d.data.name, 140);
+          return -(lines.length * 14 + 10) / 2 + 14;
+        })
+        .attr('text-anchor', 'middle')
+        .text(d => d.data.name)
+        .call(wrap, 140);
+
+      const nodeUpdate = nodeEnter.merge(node);
+
+      nodeUpdate.transition()
+        .duration(750)
+        .attr('transform', d => `translate(${d.x},${d.y})`);
+
+      nodeUpdate.select('rect')
+        .attr('width', 160)
+        .attr('height', d => {
+          const lines = wrapText(d.data.name, 140);
+          return lines.length * 14 + 10;
+        })
+        .attr('x', -80)
+        .attr('y', d => {
+          const lines = wrapText(d.data.name, 140);
+          return -(lines.length * 14 + 10) / 2;
+        })
+        .style('fill', d => d._children ? '#003057' : '#003057');
+
+      nodeUpdate.select('text')
+        .style('fill-opacity', 1);
+
+      const nodeExit = node.exit().transition()
+        .duration(750)
+        .attr('transform', d => `translate(${source.x},${source.y})`)
+        .remove();
+
+      nodeExit.select('rect')
+        .attr('width', 160)
+        .attr('height', d => {
+          const lines = wrapText(d.data.name, 140);
+          return lines.length * 14 + 10;
+        })
+        .attr('x', -80)
+        .attr('y', d => {
+          const lines = wrapText(d.data.name, 140);
+          return -(lines.length * 14 + 10) / 2;
+        });
+
+      nodeExit.select('text')
+        .style('fill-opacity', 1e-6);
+
+      const link = svg.selectAll('path.link')
+        .data(links, d => d.target.id);
+
+      const linkEnter = link.enter().insert('path', 'g')
+        .attr('class', 'link')
+        .attr('d', d => {
+          const o = { x: source.x0, y: source.y0 };
+          return linkGenerator({ source: o, target: o });
+        })
+        .style('stroke', '#A7A8A9');
+
+      linkEnter.merge(link).transition()
+        .duration(750)
+        .attr('d', linkGenerator);
+
+      link.exit().transition()
+        .duration(750)
+        .attr('d', d => {
+          const o = { x: source.x, y: source.y };
+          return linkGenerator({ source: o, target: o });
+        })
+        .remove();
+
+      nodes.forEach(d => {
+        d.x0 = d.x;
+        d.y0 = d.y;
+      });
+    }
+
+    function click(event, d) {
+      if (d.children) {
+        d._children = d.children;
+        d.children = null;
+      } else {
+        d.children = d._children;
+        d._children = null;
+      }
+      update(d);
+    }
+
+    let i = 0;
+    root.children.forEach(collapse);
+    function collapse(d) {
+      if (d.children) {
+        d._children = d.children;
+        d._children.forEach(collapse);
+        d.children = null;
+      }
+    }
+
+    update(root);
+
+    function wrap(text, width) {
+      text.each(function() {
+        const text = d3.select(this),
+              words = text.text().split(/\s+/).reverse(),
+              lineHeight = 1.1,
+              y = text.attr("y"),
+              dy = parseFloat(text.attr("dy"));
+        let word,
+            line = [],
+            lineNumber = 0,
+            tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+        while (word = words.pop()) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > width) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [word];
+            tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+          }
+        }
+      });
+    }
+
+    function wrapText(text, width) {
+      const words = text.split(/\s+/),
+            lines = [],
+            lineHeight = 1.1;
+      let line = [];
+
+      while (words.length) {
+        const word = words.shift();
+        line.push(word);
+        const textLength = line.join(' ').length * 6;
+        if (textLength > width) {
+          line.pop();
+          lines.push(line.join(' '));
+          line = [word];
+        }
+      }
+
+      lines.push(line.join(' '));
+      return lines;
+    }
+
+    const zoom = d3.zoom()
+      .scaleExtent([0.5, 2])
+      .on("zoom", (event) => {
+        svg.attr("transform", event.transform);
+      });
+
+    d3.select("svg").call(zoom);
+
+  </script>
+</body>
+</html>
