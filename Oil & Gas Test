@@ -46,7 +46,7 @@
   </div>
   <script>
     const data = {
-      name: "Offshore Oil and Gas Platform Development",
+      name: "Harbour Construction for Commercial Tankers and Ro-Ro Ferry",
       children: [
         {
           name: "Project Initiation",
@@ -63,18 +63,18 @@
                   ]
                 },
                 {
-                  name: "Reservoir Analysis",
+                  name: "Market Analysis",
                   children: [
-                    { name: "Seismic Data Interpretation" },
-                    { name: "Petrophysical Analysis" },
-                    { name: "Reservoir Modelling" }
+                    { name: "Demand Forecasting" },
+                    { name: "Competitor Analysis" },
+                    { name: "Revenue Projections" }
                   ]
                 },
                 {
                   name: "Economic Viability",
                   children: [
                     { name: "Cost Estimation" },
-                    { name: "Revenue Projections" },
+                    { name: "Financial Modelling" },
                     { name: "Risk Analysis" }
                   ]
                 }
@@ -129,7 +129,7 @@
                   ]
                 },
                 {
-                  name: "Offshore Safety Permits",
+                  name: "Maritime Safety Permits",
                   children: [
                     { name: "Safety Case Submission" },
                     { name: "Risk Assessment" },
@@ -144,7 +144,7 @@
           name: "Design and Engineering",
           children: [
             {
-              name: "Platform Design",
+              name: "Harbour Design",
               children: [
                 {
                   name: "Preliminary Design",
@@ -173,59 +173,59 @@
               ]
             },
             {
-              name: "Well Design",
+              name: "Dock and Wharf Design",
               children: [
                 {
-                  name: "Platform Wells Design",
+                  name: "Tankers Dock Design",
                   children: [
-                    { name: "Wellbore Design" },
-                    { name: "Completion Design" },
-                    { name: "Production Tubing Design" }
+                    { name: "Mooring System Design" },
+                    { name: "Loading/Unloading Facilities Design" },
+                    { name: "Safety Systems Design" }
                   ]
                 },
                 {
-                  name: "Subsea Wells Design",
+                  name: "Ro-Ro Ferry Dock Design",
                   children: [
-                    { name: "Subsea Wellhead Design" },
-                    { name: "Subsea Tree Design" },
-                    { name: "Flowline Design" }
+                    { name: "Ramp Design" },
+                    { name: "Vehicle Holding Area Design" },
+                    { name: "Passenger Facilities Design" }
                   ]
                 },
                 {
-                  name: "Injector Wells Design",
+                  name: "Support Infrastructure Design",
                   children: [
-                    { name: "Injection Wellbore Design" },
-                    { name: "Injection Equipment Design" },
-                    { name: "Monitoring System Design" }
+                    { name: "Road Access Design" },
+                    { name: "Utility Services Design" },
+                    { name: "Parking Facilities Design" }
                   ]
                 }
               ]
             },
             {
-              name: "Subsea Infrastructure Design",
+              name: "Navigational Aids Design",
               children: [
                 {
-                  name: "Flowline Design",
+                  name: "Buoys and Beacons Design",
                   children: [
-                    { name: "Flowline Route Selection" },
-                    { name: "Flowline Material Selection" },
-                    { name: "Flowline Installation Design" }
+                    { name: "Buoy Positioning" },
+                    { name: "Beacon Specifications" },
+                    { name: "Lighting Systems Design" }
                   ]
                 },
                 {
-                  name: "Riser Design",
+                  name: "Dredging Plan",
                   children: [
-                    { name: "Riser Type Selection" },
-                    { name: "Riser Support Design" },
-                    { name: "Riser Installation Design" }
+                    { name: "Dredging Requirements" },
+                    { name: "Sediment Disposal Plan" },
+                    { name: "Dredging Schedule" }
                   ]
                 },
                 {
-                  name: "Subsea Manifold Design",
+                  name: "Breakwater Design",
                   children: [
-                    { name: "Manifold Configuration" },
-                    { name: "Valve and Piping Design" },
-                    { name: "Manifold Installation Design" }
+                    { name: "Breakwater Alignment" },
+                    { name: "Structural Design" },
+                    { name: "Material Specifications" }
                   ]
                 }
               ]
@@ -239,27 +239,27 @@
               name: "Material and Equipment Sourcing",
               children: [
                 {
-                  name: "Platform Equipment",
+                  name: "Construction Materials",
                   children: [
-                    { name: "Structural Steel" },
-                    { name: "Deck Modules" },
-                    { name: "Cranes and Lifters" }
+                    { name: "Concrete and Steel" },
+                    { name: "Piles and Sheet Piles" },
+                    { name: "Riprap and Armour Stone" }
                   ]
                 },
                 {
-                  name: "Well Equipment",
+                  name: "Dock Equipment",
                   children: [
-                    { name: "Casing and Tubing" },
-                    { name: "Wellheads" },
-                    { name: "Completion Tools" }
+                    { name: "Mooring Equipment" },
+                    { name: "Loading/Unloading Equipment" },
+                    { name: "Safety and Firefighting Equipment" }
                   ]
                 },
                 {
-                  name: "Subsea Equipment",
+                  name: "Navigational Aids",
                   children: [
-                    { name: "Subsea Trees" },
-                    { name: "Flowlines" },
-                    { name: "Manifolds" }
+                    { name: "Buoys and Beacons" },
+                    { name: "Lighting Systems" },
+                    { name: "Communication Systems" }
                   ]
                 }
               ]
@@ -299,88 +299,88 @@
           name: "Construction",
           children: [
             {
-              name: "Platform Construction",
+              name: "Harbour Construction",
               children: [
                 {
                   name: "Site Preparation",
                   children: [
+                    { name: "Land Reclamation" },
                     { name: "Seabed Preparation" },
-                    { name: "Temporary Facilities Setup" },
-                    { name: "Material Storage" }
+                    { name: "Temporary Facilities Setup" }
                   ]
                 },
                 {
-                  name: "Platform Fabrication",
+                  name: "Dock Construction",
                   children: [
-                    { name: "Module Fabrication" },
-                    { name: "Structural Assembly" },
-                    { name: "Painting and Coating" }
+                    { name: "Piling Works" },
+                    { name: "Concrete Works" },
+                    { name: "Structural Assembly" }
                   ]
                 },
                 {
-                  name: "Installation",
+                  name: "Wharf Construction",
                   children: [
-                    { name: "Loadout and Transport" },
-                    { name: "Offshore Installation" },
-                    { name: "Hook-up and Commissioning" }
+                    { name: "Wharf Decking" },
+                    { name: "Mooring Systems Installation" },
+                    { name: "Loading/Unloading Facilities Installation" }
                   ]
                 }
               ]
             },
             {
-              name: "Well Drilling",
+              name: "Navigational Aids Installation",
               children: [
                 {
-                  name: "Platform Wells Drilling",
+                  name: "Buoys and Beacons Installation",
                   children: [
-                    { name: "Drilling Program" },
-                    { name: "Drilling Execution" },
-                    { name: "Well Completion" }
+                    { name: "Buoy Placement" },
+                    { name: "Beacon Installation" },
+                    { name: "Lighting Installation" }
                   ]
                 },
                 {
-                  name: "Injector Wells Drilling",
+                  name: "Dredging Operations",
                   children: [
-                    { name: "Drilling Program" },
-                    { name: "Drilling Execution" },
-                    { name: "Well Completion" }
+                    { name: "Dredging Execution" },
+                    { name: "Sediment Transport and Disposal" },
+                    { name: "Post-Dredging Survey" }
                   ]
                 },
                 {
-                  name: "Subsea Wells Drilling",
+                  name: "Breakwater Construction",
                   children: [
-                    { name: "Drilling Program" },
-                    { name: "Drilling Execution" },
-                    { name: "Well Completion" }
+                    { name: "Breakwater Foundation" },
+                    { name: "Breakwater Structure" },
+                    { name: "Breakwater Armouring" }
                   ]
                 }
               ]
             },
             {
-              name: "Subsea Infrastructure Installation",
+              name: "Infrastructure Construction",
               children: [
                 {
-                  name: "Flowline Installation",
+                  name: "Road Access Construction",
                   children: [
-                    { name: "Flowline Fabrication" },
-                    { name: "Flowline Laying" },
-                    { name: "Flowline Testing" }
+                    { name: "Road Grading and Paving" },
+                    { name: "Drainage Systems" },
+                    { name: "Signage and Markings" }
                   ]
                 },
                 {
-                  name: "Riser Installation",
+                  name: "Utility Services Installation",
                   children: [
-                    { name: "Riser Fabrication" },
-                    { name: "Riser Installation" },
-                    { name: "Riser Testing" }
+                    { name: "Water Supply" },
+                    { name: "Electricity Supply" },
+                    { name: "Sewage and Waste Disposal" }
                   ]
                 },
                 {
-                  name: "Subsea Manifold Installation",
+                  name: "Parking Facilities Construction",
                   children: [
-                    { name: "Manifold Fabrication" },
-                    { name: "Manifold Installation" },
-                    { name: "Manifold Testing" }
+                    { name: "Parking Lot Paving" },
+                    { name: "Parking Markings" },
+                    { name: "Lighting Installation" }
                   ]
                 }
               ]
@@ -394,27 +394,27 @@
               name: "System Testing",
               children: [
                 {
-                  name: "Platform Systems Testing",
+                  name: "Harbour Systems Testing",
                   children: [
-                    { name: "Mechanical Systems Testing" },
-                    { name: "Electrical Systems Testing" },
-                    { name: "Control Systems Testing" }
+                    { name: "Mooring Systems Testing" },
+                    { name: "Loading/Unloading Systems Testing" },
+                    { name: "Safety Systems Testing" }
                   ]
                 },
                 {
-                  name: "Well Systems Testing",
+                  name: "Navigational Aids Testing",
                   children: [
-                    { name: "Well Integrity Testing" },
-                    { name: "Flow Testing" },
-                    { name: "Production Testing" }
+                    { name: "Buoy and Beacon Testing" },
+                    { name: "Lighting Systems Testing" },
+                    { name: "Communication Systems Testing" }
                   ]
                 },
                 {
-                  name: "Subsea Systems Testing",
+                  name: "Infrastructure Testing",
                   children: [
-                    { name: "Flowline Testing" },
-                    { name: "Riser Testing" },
-                    { name: "Manifold Testing" }
+                    { name: "Road Access Testing" },
+                    { name: "Utility Services Testing" },
+                    { name: "Parking Facilities Testing" }
                   ]
                 }
               ]
@@ -423,9 +423,9 @@
               name: "Start-Up",
               children: [
                 {
-                  name: "Initial Production",
+                  name: "Initial Operations",
                   children: [
-                    { name: "Production Ramp-Up" },
+                    { name: "Operational Ramp-Up" },
                     { name: "System Optimisation" },
                     { name: "Operational Handover" }
                   ]
@@ -433,7 +433,7 @@
                 {
                   name: "Performance Monitoring",
                   children: [
-                    { name: "Production Monitoring" },
+                    { name: "Operational Monitoring" },
                     { name: "System Diagnostics" },
                     { name: "Performance Reporting" }
                   ]
@@ -443,7 +443,7 @@
                   children: [
                     { name: "Process Adjustments" },
                     { name: "Equipment Tuning" },
-                    { name: "Production Optimisation" }
+                    { name: "Operational Optimisation" }
                   ]
                 }
               ]
@@ -477,7 +477,7 @@
                   children: [
                     { name: "Process Optimisation" },
                     { name: "Equipment Maintenance" },
-                    { name: "Production Adjustments" }
+                    { name: "Operational Adjustments" }
                   ]
                 }
               ]
@@ -530,8 +530,8 @@
     root.x0 = height / 2;
     root.y0 = 0;
 
-    const dx = 150;
-    const dy = 300;
+    const dx = 220;
+    const dy = 75;
 
     const treeLayout = d3.tree().nodeSize([dx, dy]);
 
@@ -730,3 +730,4 @@
   </script>
 </body>
 </html>
+
